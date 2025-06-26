@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Psy-Cubo - Cogumelos Naturais</title>
+    <!-- LOGO ATUALIZADA AQUI -->
     <link rel="icon" type="image/png" href="https://i.ibb.co/L1pS8M8/classic-mushroom.png">
     <script src="https://cdn.tailwindcss.com"></script>
     
@@ -36,7 +37,7 @@
             border-color: #84cc16;
         }
         /* Ajuste para o header fixo não cobrir o conteúdo */
-        section {
+        section, header.relative {
             padding-top: 80px;
             margin-top: -80px;
         }
@@ -55,25 +56,35 @@
                     Contato
                 </a>
             </div>
-             <!-- Menu Mobile (simples) -->
+            <!-- Botão do Menu Mobile -->
             <div class="md:hidden">
-                 <a href="https://wa.me/5585981339545" target="_blank" class="bg-accent text-white font-bold py-2 px-5 rounded-lg text-sm transition-all duration-300 shadow hover-bg-accent">
-                    Contato
-                </a>
+                 <button id="mobile-menu-button" class="text-stone-800 focus:outline-none">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
             </div>
+        </div>
+         <!-- Menu Mobile (Dropdown) -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <a href="#combos" class="block text-center py-2 px-4 text-sm text-stone-600 hover:accent-color">Combos</a>
+            <a href="#galeria" class="block text-center py-2 px-4 text-sm text-stone-600 hover:accent-color">Galeria</a>
+            <a href="https://wa.me/5585981339545" target="_blank" class="block text-center bg-accent text-white font-bold m-4 py-2 px-5 rounded-lg text-sm transition-all duration-300 shadow hover-bg-accent">
+                Contato
+            </a>
         </div>
     </nav>
 
     <!-- Botão Flutuante do WhatsApp -->
-    <a href="https://wa.me/5585981339545" target="_blank" class="fixed bottom-5 right-5 bg-accent text-white p-4 rounded-full shadow-lg flex items-center justify-center z-50 transform hover:scale-110 transition-transform">
+    <a href="https://wa.me/5585981339545" target="_blank" class="fixed bottom-5 right-5 bg-green-500 text-white p-4 rounded-full shadow-lg flex items-center justify-center z-50 transform hover:scale-110 transition-transform">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 24 24" fill="currentColor">
             <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99 0-3.903-.52-5.586-1.456l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.886-.001 2.267.655 4.398 1.908 6.166l-.377 1.392 1.442-.383z"/>
         </svg>
     </a>
 
     <!-- Seção Herói -->
-    <header class="relative bg-white pt-20">
-        <div class="container mx-auto flex flex-col lg:flex-row items-center p-8 lg:p-12 lg:min-h-screen">
+    <header class="relative bg-white pt-24">
+        <div class="container mx-auto flex flex-col lg:flex-row items-center p-8 lg:p-12 min-h-screen">
             <!-- Coluna de Texto -->
             <div class="lg:w-1/2 text-center lg:text-left mb-10 lg:mb-0">
                 <h1 class="font-lora text-4xl md:text-6xl font-bold text-stone-900 leading-tight">
@@ -88,8 +99,10 @@
             </div>
             <!-- Coluna da Imagem -->
             <div class="lg:w-1/2 flex justify-center lg:justify-end">
-                <!-- IMAGEM CORRIGIDA AQUI -->
-                <img src="https://cdn.awsli.com.br/2500x2500/934/934609/produto/95709870/d01b98f332.jpg" alt="[Imagem de cogumelos Psilocybe Cubensis frescos e bonitos]" class="rounded-lg shadow-2xl w-full max-w-md object-cover h-[500px]">
+                 <img src="https://images.unsplash.com/photo-1594283182697-99b5b9b0f622?q=80&w=2574&auto=format&fit=crop" 
+                      alt="[Imagem de cogumelos mágicos a crescer na natureza]" 
+                      class="rounded-lg shadow-2xl w-full max-w-md object-cover h-[300px] md:h-[500px]"
+                      onerror="this.onerror=null;this.src='https://placehold.co/600x500/f5f0e1/586e75?text=Psy-Cubo';">
             </div>
         </div>
     </header>
@@ -134,30 +147,39 @@
                 <h2 class="font-lora text-4xl font-bold text-center text-stone-800 mb-12">Nossas Variedades</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     
-                    <!-- Card Variedade 1 - IMAGEM CORRIGIDA -->
+                    <!-- Card Variedade 1 -->
                     <div class="bg-stone-50 rounded-lg overflow-hidden border border-stone-200">
-                        <img src="https://media.istockphoto.com/id/1367969678/pt/foto/dried-psilocybin-mushrooms.jpg?s=612x612&w=0&k=20&c=kHHpG-VXENTuxkuVtPv_gjAOZ4l1cDHK3f5pVXxBgeY=" alt="[Imagem da variedade Golden Teacher]" class="w-full h-56 object-cover">
+                        <img src="https://images.unsplash.com/photo-1629828541652-a550926946e3?q=80&w=2574&auto=format&fit=crop" 
+                             alt="[Imagem de cogumelos da variedade Golden Teacher secos]" 
+                             class="w-full h-56 object-cover"
+                             onerror="this.onerror=null;this.src='https://placehold.co/600x400/f5f0e1/586e75?text=Golden+Teacher';">
                         <div class="p-6">
                             <h3 class="text-2xl font-bold font-lora text-stone-800">Golden Teacher</h3>
                             <p class="text-stone-600 mt-2">Conhecido por guiar jornadas introspectivas e reveladoras. Excelente para iniciantes e experientes.</p>
                         </div>
                     </div>
                     
-                    <!-- Card Variedade 2 - IMAGEM CORRIGIDA -->
+                    <!-- Card Variedade 2 -->
                     <div class="bg-stone-50 rounded-lg overflow-hidden border border-stone-200">
-                        <img src="https://st4.depositphotos.com/9429742/39796/i/450/depositphotos_397966336-stock-photo-white-background-psilocybin-cubensis-mushroom.jpg" alt="[Imagem de uma variedade de cogumelos pálidos]" class="w-full h-56 object-cover">
+                        <img src="https://images.unsplash.com/photo-1639019380922-b98583487c4b?q=80&w=2670&auto=format&fit=crop" 
+                             alt="[Imagem de cogumelos da variedade Albino A+ com aparência pálida]" 
+                             class="w-full h-56 object-cover"
+                             onerror="this.onerror=null;this.src='https://placehold.co/600x400/f5f0e1/586e75?text=Albino+A%2B';">
                         <div class="p-6">
                             <h3 class="text-2xl font-bold font-lora text-stone-800">Albino A+</h3>
                             <p class="text-stone-600 mt-2">Uma strain potente de aparência pálida, que proporciona efeitos visuais mais intensos e uma experiência eufórica.</p>
                         </div>
                     </div>
 
-                    <!-- Card Variedade 3 - IMAGEM CORRIGIDA -->
+                    <!-- Card Variedade 3 -->
                     <div class="bg-stone-50 rounded-lg overflow-hidden border border-stone-200">
-                        <img src="https://image.tuasaude.com/media/article/oj/ln/cogumelo-juba-de-leao_63318.jpg?width=686&height=487" alt="[Imagem da variedade Mazatapec]" class="w-full h-56 object-cover">
+                         <img src="https://images.unsplash.com/photo-1628602652233-a396a84913a5?q=80&w=2574&auto=format&fit=crop"
+                             alt="[Imagem do cogumelo Juba de Leão com a sua aparência característica]" 
+                             class="w-full h-56 object-cover"
+                             onerror="this.onerror=null;this.src='https://placehold.co/600x400/f5f0e1/586e75?text=Juba+de+Le%C3%A3o';">
                         <div class="p-6">
                             <h3 class="text-2xl font-bold font-lora text-stone-800">Juba de Leão</h3>
-                            <p class="text-stone-600 mt-2"> Ele estimula a produção do Fator de Crescimento Nervoso (NGF), uma proteína essencial para o crescimento, manutenção e sobrevivência dos neurônios. Isso pode ajudar a melhorar a memória, o foco e a clareza mental.</p>
+                            <p class="text-stone-600 mt-2">Famoso por estimular o Fator de Crescimento Nervoso (NGF), ajudando a melhorar a memória, o foco e a clareza mental.</p>
                         </div>
                     </div>
                 </div>
@@ -173,11 +195,21 @@
                 Compromisso com a qualidade, desde o cultivo até você.
             </p>
             <div class="mt-6">
-                <p class="text-stone-400">&copy; 2024 Psy-Cubo. Todos os direitos reservados.</p>
+                <p class="text-stone-400">&copy; 2025 Psy-Cubo. Todos os direitos reservados.</p>
                 <p class="text-stone-500 text-sm mt-2">Produto destinado a maiores de 18 anos. Use com consciência e responsabilidade.</p>
             </div>
         </div>
     </footer>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+        });
+    </script>
 </body>
 </html>
