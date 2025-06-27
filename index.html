@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Psy-Cubo - Cogumelos Naturais</title>
+    <title>Alma-Fungi - Cogumelos Naturais</title>
     <link rel="shortcut icon" type="imagex/png" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9A2_HNMtv3oPlYe9gBS-NKQeU3Ytv-L0t-A&s"> 
     
     <!-- Tailwind CSS -->
@@ -19,6 +19,24 @@
             scroll-behavior: smooth;
         }
         body {
+           /* Caminho para a sua imagem local */
+           background-image: url('imagens/fundo.jpg');
+
+           /* Propriedades adicionais para controlar o fundo (opcional) */
+
+           /* Faz com que a imagem não se repita */
+            background-repeat: no-repeat;
+
+           /* Faz com que a imagem cubra toda a tela, sem distorcer */
+            background-size: cover;
+  
+           /* Centraliza a imagem na tela */
+            background-position: center;
+
+           /* Define uma cor de fundo que será exibida enquanto a imagem carrega */
+            background-color: #cccccc; 
+        }
+
             font-family: 'Montserrat', sans-serif;
         }
         .font-lora {
@@ -49,7 +67,7 @@
     <!-- Header com Navegação -->
     <nav class="bg-white/80 backdrop-blur-lg shadow-sm fixed top-0 left-0 right-0 z-40">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="font-lora text-2xl font-bold text-stone-800">Psy-Cubo</a>
+            <a href="#" class="font-lora text-2xl font-bold text-stone-800">Alma-Fungi</a>
             <div class="hidden md:flex items-center space-x-6">
                 <a href="#combos" class="text-stone-600 hover:accent-color transition-colors">Combos</a>
                 <a href="#galeria" class="text-stone-600 hover:accent-color transition-colors">Galeria</a>
